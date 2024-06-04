@@ -26,6 +26,7 @@ body {
   justify-content: center;
 }
 
+/* Result component */
 .result {
   width: 100%;
   padding: 40px;
@@ -62,4 +63,33 @@ body {
   color: #120f0e;
   font-weight: bold;
   letter-spacing: 5px;
+}
+
+/* AddTodo component */
+.add-todo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-todo input {
+  width: 80%;
+  height: 50px;
+  background-color: #1e1e1e;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding-left: 20px;
+  border-radius: 1.5rem;
+}
+
+.add-todo button {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: #ff5631;
+  cursor: pointer;
 }
