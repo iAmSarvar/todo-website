@@ -1,12 +1,13 @@
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 
-const ListItem = () => {
+// eslint-disable-next-line react/prop-types
+const ListItem = ({ todo }) => {
   return (
     <li>
       <div>
         <input type="checkbox" />
-        <h2>Task</h2>
+        <h2>{Object(todo).name}</h2>
       </div>
       <div>
         <button>

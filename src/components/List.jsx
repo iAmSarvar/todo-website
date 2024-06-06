@@ -1,9 +1,12 @@
 import ListItem from "./ListItem";
 
-const List = () => {
+// eslint-disable-next-line react/prop-types
+const List = ({ todos }) => {
   return (
     <ul className="list">
-      <ListItem />
+      {Object(todos).map((todo) => {
+        return <ListItem todo={todo} key={todo._id} />;
+      })}
     </ul>
   );
 };

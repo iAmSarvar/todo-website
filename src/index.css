@@ -128,7 +128,7 @@ body {
 .list input {
   width: 25px;
   height: 25px;
-  color: green;
+  cursor: pointer;
 }
 
 .list button {
