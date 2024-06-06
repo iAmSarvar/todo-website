@@ -10,7 +10,7 @@ const App = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getTodos().then((allTodos) => setTodos(allTodos));
-  }, []);
+  }, [todos]);
 
   return (
     <div className="container">

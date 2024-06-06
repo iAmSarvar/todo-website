@@ -11,4 +11,8 @@ const getTodos = async () => {
   }
 };
 
-export { getTodos };
+const addTodo = async (newTodo) => {
+  await axios.post("http://localhost:8000/api/v1/todos", { name: newTodo });
+};
+
+export { getTodos, addTodo };
