@@ -15,4 +15,8 @@ const addTodo = async (newTodo) => {
   await axios.post("http://localhost:8000/api/v1/todos", { name: newTodo });
 };
 
-export { getTodos, addTodo };
+const deleteTodo = async (id) => {
+  await axios.delete(`http://localhost:8000/api/v1/todos/${id}`);
+};
+
+export { getTodos, addTodo, deleteTodo };
