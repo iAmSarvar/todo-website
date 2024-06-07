@@ -19,4 +19,8 @@ const deleteTodo = async (id) => {
   await axios.delete(`http://localhost:8000/api/v1/todos/${id}`);
 };
 
-export { getTodos, addTodo, deleteTodo };
+const updateTodo = async (isDone, id) => {
+  await axios.patch(`http://localhost:8000/api/v1/todos/${id}`, { isDone });
+};
+
+export { getTodos, addTodo, deleteTodo, updateTodo };

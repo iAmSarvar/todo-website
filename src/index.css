@@ -189,3 +189,12 @@ body {
     opacity: 0;
   }
 }
+
+/* Utils */
+.done {
+  text-decoration: line-through;
+}
+
+.not-done {
+  text-decoration: none;
+}

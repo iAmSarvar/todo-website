@@ -9,9 +9,14 @@ const AddTodo = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true);
+    if (inputRef.current.value) {
+      setIsLoading(true);
 
-    addTodo(inputRef.current.value).then(() => setIsLoading(false));
+      addTodo(inputRef.current.value).then(() => setIsLoading(false));
+      inputRef.current.value = "";
+    } else {
+      alert("Please enter a todo name!");
+    }
   };
 
   return (
