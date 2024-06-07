@@ -6,17 +6,18 @@ import { getTodos } from "./services/apiService";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
+  const [todoUpdated, setTodoUpdated] = useState(false);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    getTodos().then((allTodos) => setTodos(allTodos));
-  }, [todos]);
+    getTodos().then(setTodos);
+  }, [todoUpdated]);
 
   return (
     <div className="container">
       <Result todos={todos} />
-      <AddTodo />
-      <List todos={todos} />
+      <AddTodo setTodoUpdated={setTodoUpdated} />
+      <List setTodoUpdated={setTodoUpdated} todos={todos} />
     </div>
   );
 };

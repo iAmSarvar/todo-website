@@ -3,7 +3,8 @@ import { addTodo } from "../services/apiService";
 import { useRef, useState } from "react";
 import Loader from "./Loader";
 
-const AddTodo = () => {
+// eslint-disable-next-line react/prop-types
+const AddTodo = ({ setTodoUpdated }) => {
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef();
 
@@ -14,6 +15,7 @@ const AddTodo = () => {
 
       addTodo(inputRef.current.value).then(() => setIsLoading(false));
       inputRef.current.value = "";
+      setTodoUpdated((prev) => !prev);
     } else {
       alert("Please enter a todo name!");
     }

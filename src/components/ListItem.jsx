@@ -4,7 +4,7 @@ import { useState } from "react";
 import Loader from "./Loader";
 
 // eslint-disable-next-line react/prop-types
-const ListItem = ({ todo }) => {
+const ListItem = ({ todo, setTodoUpdated }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [checked, setChecked] = useState(Object(todo).isDone);
 
@@ -13,6 +13,7 @@ const ListItem = ({ todo }) => {
     updateTodo(!checked, Object(todo)._id).then(() => {
       setIsLoading(false);
     });
+    setTodoUpdated((prev) => !prev);
   };
 
   const handleDeleteTodo = () => {
@@ -20,6 +21,7 @@ const ListItem = ({ todo }) => {
     deleteTodo(Object(todo)._id).then(() => {
       setIsLoading(false);
     });
+    setTodoUpdated((prev) => !prev);
   };
   return (
     <li>
