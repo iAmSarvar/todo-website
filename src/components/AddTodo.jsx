@@ -13,9 +13,11 @@ const AddTodo = ({ setTodoUpdated }) => {
     if (inputRef.current.value) {
       setIsLoading(true);
 
-      addTodo(inputRef.current.value).then(() => setIsLoading(false));
+      addTodo(inputRef.current.value).then(() => {
+        setIsLoading(false);
+        setTodoUpdated((prev) => !prev);
+      });
       inputRef.current.value = "";
-      setTodoUpdated((prev) => !prev);
     } else {
       alert("Please enter a todo name!");
     }

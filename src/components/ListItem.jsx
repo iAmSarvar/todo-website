@@ -12,16 +12,16 @@ const ListItem = ({ todo, setTodoUpdated }) => {
     setIsLoading(true);
     updateTodo(!checked, Object(todo)._id).then(() => {
       setIsLoading(false);
+      setTodoUpdated((prev) => !prev);
     });
-    setTodoUpdated((prev) => !prev);
   };
 
   const handleDeleteTodo = () => {
     setIsLoading(true);
     deleteTodo(Object(todo)._id).then(() => {
       setIsLoading(false);
+      setTodoUpdated((prev) => !prev);
     });
-    setTodoUpdated((prev) => !prev);
   };
   return (
     <li>
