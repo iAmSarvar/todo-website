@@ -198,3 +198,48 @@ body {
 .not-done {
   text-decoration: none;
 }
+
+/* Mobile responsive */
+
+@media (max-width: 375px) {
+  body {
+    justify-content: flex-start;
+    padding: 50px 0;
+  }
+
+  .container {
+    width: 90vw;
+    height: fit-content;
+    gap: 20px;
+  }
+
+  .result {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .result-score {
+    width: 100px;
+    height: 100px;
+  }
+
+  .result h1 {
+    font-size: 1.4rem;
+  }
+
+  .container h1 + h3 {
+    font-size: 0.8rem;
+  }
+
+  .result-score h3 {
+    font-size: 2rem;
+  }
+
+  .list {
+    height: 55vh;
+  }
+
+  .list li {
+    font-size: 0.7rem;
+  }
+}
